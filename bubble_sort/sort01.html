@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Bubble Sort</title>
+    <script src="../common/algorithmUtil.js"></script>
+</head>
+<body>
+</body>
+<script>
+    var chaos = AlgorithmUtil.generateRandomArray(10,100);
+    document.write('<h2>初始无序队列:'+chaos.join(' ')+'</h2>');
+    var completed = false;
+    for (var i = 0; i < chaos.length; i++) {
+        var swapCount = 0;
+        for (var j = 0; j < chaos.length - i - 1; j++) {
+            if(!completed){
+                if(chaos[j] > chaos[j+1]){
+                    AlgorithmUtil.swap(chaos, j);
+                    swapCount++;
+                }
+                document.write(AlgorithmUtil.print(chaos,j,i));
+            }
+        }
+        if(swapCount === 0){
+            completed = true;
+            document.write('<h1>排序完成</h1>');
+            break;
+        }else{
+            document.write('<h3>前'+(i+1)+'大的数字已排序完成</h3>');
+        }
+
+    }
+</script>
+</html>
