@@ -11,10 +11,10 @@ AlgorithmUtil.generateRandomArray = function(size,max){
     }
     return arr;
 };
-AlgorithmUtil.swap = function(arr, i){
+AlgorithmUtil.swap = function(arr, i, j){
     var temp = arr[i];
-    arr[i] = arr[i+1];
-    arr[i+1] = temp;
+    arr[i] = arr[j];
+    arr[j] = temp;
 };
 
 AlgorithmUtil.print = function(arr, i, round){

@@ -14,7 +14,7 @@
         for (var j = 0; j < chaos.length - i - 1; j++) {
             if(!completed){
                 if(chaos[j] > chaos[j+1]){
-                    AlgorithmUtil.swap(chaos, j);
+                    AlgorithmUtil.swap(chaos, j , j + 1);
                     swapCount++;
                 }
                 document.write(AlgorithmUtil.print(chaos,j,i));

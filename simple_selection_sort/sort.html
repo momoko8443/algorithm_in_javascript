@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Simple Selection Sort</title>
+    <script src="../common/algorithmUtil.js"></script>
+</head>
+<body>
+</body>
+<script>
+    var chaos = AlgorithmUtil.generateRandomArray(10,100);
+    document.write('<h2>初始无序队列:'+chaos.join(' ')+'</h2>');
+    var completed = false;
+    for (var i = 0; i < chaos.length; i++) {
+        var min = chaos[i];
+        var minIndex = i;
+        for (var j = i+1; j < chaos.length; j++) {        
+            if(min > chaos[j]){
+                min = chaos[j];
+                minIndex = j;
+            }
+            if(j === chaos.length - 1 && i !== minIndex){
+                AlgorithmUtil.swap(chaos, i, minIndex);
+                document.write(chaos.join(' '));
+                document.write('<h3>前'+(i+1)+'小的数字已排序完成</h3>');
+            }
+        }
+    }
+</script>
+</html>
